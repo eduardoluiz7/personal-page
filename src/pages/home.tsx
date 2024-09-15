@@ -1,6 +1,7 @@
 import profileImg  from '../assets/profile.jpg'
 import resume from '../assets/cv_eduardo_pt.pdf'
 import { FaFileDownload } from 'react-icons/fa'
+import { MapPin } from 'lucide-react'
 import { Socials } from '../components/socials'
 
 
@@ -16,6 +17,10 @@ export function Home() {
               />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-300">Eduardo Luiz</h1>
+            <div className="flex items-center justify-center text-xl sm:text-xl text-zinc-300">
+                <MapPin className="mr-2" />
+                Recife, Brasil
+            </div>
             <p className="text-lg sm:text-xl text-zinc-200 px-4 sm:px-0">
               Engenheiro de Software | Apaixonado por criar aplicações modernas e eficientes.
             </p>

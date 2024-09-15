@@ -16,7 +16,7 @@ export function Navbar () {
               <Link to="/">EL</Link>
             </div>
             <div className="hidden md:flex space-x-4">
-              <Link to="/" className="text-lime-300 hover:text-gray-300">Home</Link>
+              <Link to="/" className="text-lime-300 hover:text-gray-300">Inicio</Link>
               <Link to="/experiences" className="text-lime-300 hover:text-gray-300">Experiências</Link>
               <Link to="/skills" className="text-lime-300 hover:text-gray-300">Skills</Link>
               <Link to="/contact" className="text-lime-300 hover:text-gray-300">Contato</Link>
@@ -31,10 +31,11 @@ export function Navbar () {
             </div>
           </div>
           {isOpen && (
-            <div className="md:hidden">
-              <a href="#" className="block text-white hover:bg-lime-300 p-2">About</a>
-              <a href="#" className="block text-white hover:bg-lime-300 p-2">Services</a>
-              <a href="#" className="block text-white hover:bg-lime-300 p-2">Contato</a>
+            <div className="bg-black md:hidden">
+              <a href="/" className="block text-white hover:bg-lime-300 p-2">Inicio</a>
+              <a href="/experiences" className="block text-white hover:bg-lime-300 p-2">Experiências</a>
+              <a href="/skills" className="block text-white hover:bg-lime-300 p-2">Skills</a>
+              <a href="/contact" className="block text-white hover:bg-lime-300 p-2">Contato</a>
             </div>
           )}
         </nav>
