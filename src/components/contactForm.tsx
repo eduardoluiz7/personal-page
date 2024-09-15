@@ -40,9 +40,6 @@ export function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Nome */}
         <div>
-          <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="name">
-            Nome
-          </label>
           <input
             id="name"
             name="name"
@@ -50,15 +47,12 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
+            placeholder='Nome'
+            className="w-full h-12 px-3 py-2 border-none bg-zinc-900 rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
-
         {/* Email */}
         <div>
-          <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="email">
-            Email
-          </label>
           <input
             id="email"
             name="email"
@@ -66,15 +60,13 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
+            placeholder='E-mail'
+            className="w-full h-12 px-3 bg-zinc-900 border-none py-2 border rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
 
         {/* Assunto */}
         <div>
-          <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="subject">
-            Assunto
-          </label>
           <input
             id="subject"
             name="subject"
@@ -82,27 +74,27 @@ export function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
+            placeholder='Assunto'
+            className="w-full h-12 px-3 bg-zinc-900 py-2 border border-none rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
 
         {/* Mensagem */}
         <div>
-          <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="message">
-            Mensagem
-          </label>
           <textarea
             id="message"
             name="message"
             rows={5}
             value={formData.message}
             onChange={handleChange}
+            placeholder="Mensagem"
             required
-            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
+            className="w-full bg-zinc-900 px-3 border-none py-2 border placholder-zinc-400 rounded-lg text-gray-200 focus:outline-none resize-none"
           />
         </div>
         <button
           type="submit"
+          disabled
           className="w-full bg-lime-300 text-zinc-900 font-bold py-2 px-4 rounded-lg hover:bg-lime-400"
         >
           Enviar
