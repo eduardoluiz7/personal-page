@@ -17,10 +17,9 @@ export function Navbar () {
             </div>
             <div className="hidden md:flex space-x-4">
               <Link to="/" className="text-lime-300 hover:text-gray-300">Home</Link>
-              <Link to="/about" className="text-lime-300 hover:text-gray-300">Sobre</Link>
               <Link to="/experiences" className="text-lime-300 hover:text-gray-300">Experiências</Link>
               <Link to="/skills" className="text-lime-300 hover:text-gray-300">Skills</Link>
-              <Link to="/contact" className="text-lime-300 hover:text-gray-300">Contact</Link>
+              <Link to="/contact" className="text-lime-300 hover:text-gray-300">Contato</Link>
             </div>
             <div className="md:hidden">
               <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -33,10 +32,9 @@ export function Navbar () {
           </div>
           {isOpen && (
             <div className="md:hidden">
-              <a href="/" className="block text-white hover:bg-lime-300 p-2">Home</a>
               <a href="#" className="block text-white hover:bg-lime-300 p-2">About</a>
               <a href="#" className="block text-white hover:bg-lime-300 p-2">Services</a>
-              <a href="#" className="block text-white hover:bg-lime-300 p-2">Contact</a>
+              <a href="#" className="block text-white hover:bg-lime-300 p-2">Contato</a>
             </div>
           )}
         </nav>

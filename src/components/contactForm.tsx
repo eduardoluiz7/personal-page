@@ -36,7 +36,7 @@ export function ContactForm() {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      <h2 className="text-3xl font-bold text-lime-300 mb-6">Entre em contato</h2>
+      <h2 className="text-3xl font-bold text-lime-300 mb-6">Fale Comigo</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Nome */}
         <div>
@@ -50,7 +50,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-gray-900 focus:outline-none"
+            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
           />
         </div>
 
@@ -66,7 +66,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-gray-900 focus:outline-none"
+            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
           />
         </div>
 
@@ -82,7 +82,7 @@ export function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-gray-900 focus:outline-none"
+            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
           />
         </div>
 
@@ -98,14 +98,12 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border rounded-lg text-gray-900 focus:outline-none"
+            className="w-full px-3 py-2 border rounded-lg text-zinc-900 focus:outline-none"
           />
         </div>
-
-        {/* Botão de Enviar */}
         <button
           type="submit"
-          className="w-full bg-lime-300 text-gray-900 font-bold py-2 px-4 rounded-lg hover:bg-lime-400"
+          className="w-full bg-lime-300 text-zinc-900 font-bold py-2 px-4 rounded-lg hover:bg-lime-400"
         >
           Enviar
         </button>

@@ -1,8 +1,8 @@
-import { FaLinkedinIn, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 
 export function Socials() {
     return (
-        <div className="flex space-x-4">
+        <div className="flex justify-center space-x-4 mt-8 max-w-4xl mx-auto">
             <a 
                 href="https://www.linkedin.com/in/eduardoluizs/" 
                 target="_blank" 
@@ -26,14 +26,6 @@ export function Socials() {
                 className="text-gray-800 hover:text-pink-600 transition-colors duration-300"
             >
                 <FaInstagram size={32} />
-            </a>
-            <a 
-                href="https://facebook.com/eduardoluiz0" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-800 hover:text-blue-600 transition-colors duration-300"
-            >
-                <FaFacebook size={32} />
             </a>
         </div>
     );

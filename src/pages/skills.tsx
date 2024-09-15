@@ -1,74 +1,94 @@
-import { SkillCard } from "../components/skillCard";
-import { DiReact, DiGo, DiDjango, DiPostgresql, DiPython, DiNodejs, DiMongodb } from 'react-icons/di';
+import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa'
+import { SiTypescript, SiDjango, SiPostgresql, SiGo, SiMongodb } from 'react-icons/si'
 
+interface Skill {
+  name: string
+  icon: React.ReactNode
+  experience: string
+  description: string
+}
+
+const skills: Skill[] = [
+    {
+        name: "Python",
+        icon: <FaPython className="text-yellow-500" />,
+        experience: "6 years",
+        description: "Desenvolvimento backend, Análise de Dados, Scripting e Machine Learning com Python."
+    },
+    {
+        name: "Django",
+        icon: <SiDjango className="text-green-950" />,
+        experience: "3 years",
+        description: "Designing and implementing efficient Web Applications."
+    },
+    {
+      name: "Golang",
+      icon: <SiGo className="text-blue-700" />,
+      experience: "3 years",
+      description: "Desenvolvimento de RESTful APIs e Microsserviços"
+  },
+  {
+    name: "React",
+    icon: <FaReact className="text-blue-500" />,
+    experience: "2 years",
+    description: "Desenvolvimento e manutenção de Interfaces de Usuário eficientes e responsivas usando React."
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs className="text-green-500" />,
+    experience: "3 years",
+    description: "Desenvolvimento de RESTful APIs e Webhooks com Node.js e Express."
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-blue-700" />,
+    experience: "3 years",
+    description: "Melhorando o desenvolvimento JavaScript com tipagem estática e funcionalidades avançadas."
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql className="text-blue-500" />,
+    experience: "3 years",
+    description: "Gerenciando e realizando queries em bancos de dados relacionais."
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb className="text-green-500" />,
+    experience: "2 years",
+    description: "Criando e mantendo bancos de dados não relacionais."
+  }
+]
 
 export function Skills() {
+  return (
+    <div className="min-h-screen bg-pattern bg-no-repeat bg-center flex flex-col items-center justify-center p-4 sm:p-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center text-lime-300 mb-12">Linguagens e Ferramentas</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {skills.map((skill, index) => (
+            <SkillCard key={index} skill={skill} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SkillCard({ skill }: { skill: Skill }) {
     return (
-        <>
-            <div className="h-screen flex flex-col items-center justify-center bg-pattern bg-no-repeat bg-center">
-                <div className="container mx-auto px-4 py-2 max-w-4xl">
-                    <h1 className="text-4xl font-bold text-lime-300 text-center mb-8">Habilidades</h1>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="Python"
-                                description="Aplicações Web e Inteligência Artificial" 
-                                time="7 anos"
-                                icon={DiPython}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="Django Framework"
-                                description="Desenvolvimento de aplicações web" 
-                                time="3 anos"
-                                icon={DiDjango}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="Golang"
-                                description="Desenvolvimento de aplicações web" 
-                                time="3 anos"
-                                icon={DiGo}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="Node"
-                                description="Framework para aplicações web" 
-                                time="3 anos"
-                                icon={DiNodejs}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="PostgreSQL"
-                                description="Banco de dados relacional" 
-                                time="3 anos"
-                                icon={DiPostgresql}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="React"
-                                description="Desenvolvimento de aplicações web" 
-                                time="3 anos"
-                                icon={DiReact}
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <SkillCard 
-                                title="MongoDB"
-                                description="Banco de dados não relacional" 
-                                time="2 anos"
-                                icon={DiMongodb}
-                            />
-                        </div>
-                    </div>
-                </div>
+      <div className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300">
+        <div className="p-6 flex items-center">
+          <div className="flex-shrink-0 mr-4">
+            <div className="w-12 h-12 flex items-center justify-center text-3xl">
+              {skill.icon}
             </div>
-        </>
-    );
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-lime-300 mb-1">{skill.name}</h3>
+            <p className="text-sm text-gray-400 mb-2">{skill.experience}</p>
+            <p className="text-gray-300 text-sm">{skill.description}</p>
+          </div>
+        </div>
+      </div>
+    )
   }
