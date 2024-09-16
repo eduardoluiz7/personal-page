@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function Navbar () {
 
     const [isOpen, setIsOpen] = useState(false);
+    const { i18n } = useTranslation();
+    const { t } = useTranslation();
+
+    const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      i18n.changeLanguage(event.target.value);
+    };
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -16,10 +23,19 @@ export function Navbar () {
               <Link to="/">EL</Link>
             </div>
             <div className="hidden md:flex space-x-4">
-              <Link to="/" className="text-lime-300 hover:text-gray-300">Inicio</Link>
-              <Link to="/experiences" className="text-lime-300 hover:text-gray-300">Experiências</Link>
-              <Link to="/skills" className="text-lime-300 hover:text-gray-300">Skills</Link>
-              <Link to="/contact" className="text-lime-300 hover:text-gray-300">Contato</Link>
+              <Link to="/" className="text-lime-300 hover:text-gray-300">{t('nav.home')}</Link>
+              <Link to="/experiences" className="text-lime-300 hover:text-gray-300">{t('nav.experience')}</Link>
+              <Link to="/skills" className="text-lime-300 hover:text-gray-300">{t('nav.skills')}</Link>
+              <Link to="/contact" className="text-lime-300 hover:text-gray-300">{t('nav.contact')}</Link>
+              <span className="text-lime-300 m-0 p-0 border-none">|</span>
+              <select
+                value={i18n.language}
+                onChange={changeLanguage}
+                className="bg-inherit text-lime-300 border-none ml-4"
+              >
+                <option className="bg-zinc-900 text-lime-300" value="en">English</option>
+                <option className="bg-zinc-900 text-lime-300" value="pt">Português</option>
+              </select>
             </div>
             <div className="md:hidden">
               <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -32,10 +48,18 @@ export function Navbar () {
           </div>
           {isOpen && (
             <div className="bg-black md:hidden">
-              <a href="/" className="block text-white hover:bg-lime-300 p-2">Inicio</a>
-              <a href="/experiences" className="block text-white hover:bg-lime-300 p-2">Experiências</a>
-              <a href="/skills" className="block text-white hover:bg-lime-300 p-2">Skills</a>
-              <a href="/contact" className="block text-white hover:bg-lime-300 p-2">Contato</a>
+              <a href="/" className="block text-white hover:bg-lime-300 p-2">{t('nav.home')}</a>
+              <a href="/experiences" className="block text-white hover:bg-lime-300 p-2">{t('nav.experience')}</a>
+              <a href="/skills" className="block text-white hover:bg-lime-300 p-2">{t('nav.skills')}</a>
+              <a href="/contact" className="block text-white hover:bg-lime-300 p-2">{t('nav.contact')}</a>
+              <select
+                value={i18n.language}
+                onChange={changeLanguage}
+                className="bg-inherit text-white border-none ml-4"
+              >
+                <option className="bg-zinc-900 text-white" value="en">English</option>
+                <option className="bg-zinc-900 text-white" value="pt">Português</option>
+              </select>
             </div>
           )}
         </nav>

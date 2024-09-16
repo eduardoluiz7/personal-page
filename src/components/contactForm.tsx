@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { ContactData, sendEmail } from '../services/email';
+import { useTranslation } from 'react-i18next';
 
 export function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,7 +38,7 @@ export function ContactForm() {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      <h2 className="text-3xl font-bold text-lime-300 mb-6">Fale Comigo</h2>
+      <h1 className="text-4xl text-center font-bold text-lime-300 mb-12">{t('contact.title')}</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Nome */}
         <div>
@@ -47,7 +49,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder='Nome'
+            placeholder={t('contact.select-name')}
             className="w-full h-12 px-3 py-2 border-none bg-zinc-900 rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
@@ -60,7 +62,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder='E-mail'
+            placeholder={t('contact.select-email')}
             className="w-full h-12 px-3 bg-zinc-900 border-none py-2 border rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
@@ -74,7 +76,7 @@ export function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            placeholder='Assunto'
+            placeholder={t('contact.select-subject')}
             className="w-full h-12 px-3 bg-zinc-900 py-2 border border-none rounded-lg text-gray-200 focus:outline-none"
           />
         </div>
@@ -87,7 +89,7 @@ export function ContactForm() {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            placeholder="Mensagem"
+            placeholder={t('contact.select-message')}
             required
             className="w-full bg-zinc-900 px-3 border-none py-2 border placholder-zinc-400 rounded-lg text-gray-200 focus:outline-none resize-none"
           />
@@ -97,7 +99,7 @@ export function ContactForm() {
           disabled
           className="w-full bg-lime-300 text-zinc-900 font-bold py-2 px-4 rounded-lg hover:bg-lime-400"
         >
-          Enviar
+          {t('contact.button-send')}
         </button>
       </form>
     </div>

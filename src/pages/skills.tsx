@@ -1,6 +1,7 @@
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa'
 import { SiTypescript, SiDjango, SiPostgresql, SiGo, SiMongodb } from 'react-icons/si'
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface Skill {
   name: string
@@ -9,58 +10,59 @@ interface Skill {
   description: string
 }
 
-const skills: Skill[] = [
+export function Skills() {
+  const { t } = useTranslation();
+  const skills: Skill[] = [
     {
         name: "Python",
         icon: <FaPython className="text-yellow-500" />,
-        experience: "6 years",
-        description: "Desenvolvimento backend, Análise de Dados, Scripting e Machine Learning com Python."
+        experience: t('skills.python.experience'),
+        description: t('skills.python.description')
     },
     {
         name: "Django",
         icon: <SiDjango className="text-green-950" />,
-        experience: "3 years",
-        description: "Designing and implementing efficient Web Applications."
+        experience: t('skills.django.experience'),
+        description: t('skills.django.description')
     },
     {
       name: "Golang",
       icon: <SiGo className="text-blue-700" />,
-      experience: "3 years",
-      description: "Desenvolvimento de RESTful APIs e Microsserviços"
+      experience: t('skills.golang.experience'),
+      description: t('skills.golang.description')
   },
   {
     name: "React",
     icon: <FaReact className="text-blue-500" />,
-    experience: "2 years",
-    description: "Desenvolvimento e manutenção de Interfaces de Usuário eficientes e responsivas usando React."
+    experience: t('skills.react.experience'),
+    description: t('skills.react.description')
   },
   {
     name: "Node.js",
     icon: <FaNodeJs className="text-green-500" />,
-    experience: "3 years",
-    description: "Desenvolvimento de RESTful APIs e Webhooks com Node.js e Express."
+    experience: t('skills.node.experience'),
+    description: t('skills.node.description')
   },
   {
     name: "TypeScript",
     icon: <SiTypescript className="text-blue-700" />,
-    experience: "3 years",
-    description: "Melhorando o desenvolvimento JavaScript com tipagem estática e funcionalidades avançadas."
+    experience: t('skills.typescript.experience'),
+    description: t('skills.typescript.description')
   },
   {
     name: "PostgreSQL",
     icon: <SiPostgresql className="text-blue-500" />,
-    experience: "3 years",
-    description: "Gerenciando e realizando queries em bancos de dados relacionais."
+    experience: t('skills.postgres.experience'),
+    description: t('skills.postgres.description')
   },
   {
     name: "MongoDB",
     icon: <SiMongodb className="text-green-500" />,
-    experience: "2 years",
-    description: "Criando e mantendo bancos de dados não relacionais."
+    experience: t('skills.mongodb.experience'),
+    description: t('skills.mongodb.description')
   }
 ]
 
-export function Skills() {
   return (
     <motion.div 
       className="min-h-screen bg-pattern bg-no-repeat bg-center flex flex-col items-center justify-center p-4 sm:p-8"
@@ -75,7 +77,7 @@ export function Skills() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         >
-        <h2 className="text-4xl font-bold text-center text-lime-300 mb-12">Linguagens e Ferramentas</h2>
+        <h2 className="text-4xl font-bold text-center text-lime-300 mb-12">{t('skills.title')}</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, index) => (
             <SkillCard key={index} skill={skill} />
@@ -88,11 +90,8 @@ export function Skills() {
 
 function SkillCard({ skill }: { skill: Skill }) {
     return (
-      <motion.div
+      <div
         className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4 }}
         >
         <div className="p-6 flex items-center">
           <div className="flex-shrink-0 mr-4">
@@ -106,6 +105,6 @@ function SkillCard({ skill }: { skill: Skill }) {
             <p className="text-gray-300 text-sm">{skill.description}</p>
           </div>
         </div>
-      </motion.div>
+      </div>
     )
   }

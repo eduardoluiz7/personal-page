@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface Experience {
     company: string
@@ -8,31 +9,32 @@ interface Experience {
     description: string
   }
   
-  const experiences: Experience[] = [
-    {
-      company: "VERT Capital",
-      role: "Software Engineer",
-      period: "Jun 2022 - Present",
-      technologies: ["Python", "Golang", "Django", "PostgreSQL"],
-      description: "Atuo no desenvolvimento de soluções inovadoras, focando em aplicações web de alta performance com tecnologias modernas."
-    },
-    {
-      company: "Elife",
-      role: "Full Stack Developer",
-      period: "Jul 2021 - Mai 2022",
-      technologies: ["Node.js", "Express", "MongoDB", "React.js"],
-      description: "Desenvolvi e mantive assistentes virtuais como chatbots para diversas empresas de diferentes áreas de atuação."
-    },
-    {
-      company: "LIVE - Laboratório de Inovação",
-      role: "AI Developer",
-      period: "Abr 2019 - Dez 2020",
-      technologies: ["Python", "Node", "Otimização"],
-      description: "Conduzi pesquisas e implementei soluções de inteligência artificial para melhorar a mobilidade urbana em cidades inteligentes."
-    }
-  ]
-  
   export function Experiences() {
+    const { t } = useTranslation();
+    const experiences: Experience[] = [
+      {
+        company: "VERT Capital",
+        role: t('experiences.vert.role'),
+        period: t('experiences.vert.period'),
+        technologies: ["Python", "Golang", "Django", "PostgreSQL"],
+        description: t('experiences.vert.description')
+      },
+      {
+        company: "Elife",
+        role: t('experiences.elife.role'),
+        period: t('experiences.elife.period'),
+        technologies: ["Node.js", "Express", "MongoDB", "React.js"],
+        description: t('experiences.elife.description')
+      },
+      {
+        company: "LIVE - Laboratório de Inovação",
+        role: t('experiences.live.role'),
+        period: t('experiences.live.period'),
+        technologies: ["Python", "Node", "Otimização"],
+        description: t('experiences.live.description')
+      }
+    ]
+
     return (
       <motion.div
         className="min-h-screen bg-pattern bg-no-repeat bg-center flex flex-col items-center justify-center p-4 sm:p-8"
@@ -41,7 +43,7 @@ interface Experience {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
         >
-        <h1 className="text-4xl font-bold text-center text-lime-300 mb-12">Experiências</h1>
+        <h1 className="text-4xl font-bold text-center text-lime-300 mb-12">{t('experiences.title')}</h1>
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0 }}
@@ -60,11 +62,8 @@ interface Experience {
   
   function ExperienceCard({ experience }: { experience: Experience }) {
     return (
-      <motion.div
+      <div
         className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4 }}
         >
         <div className="p-6">
           <h3 className="text-xl font-semibold text-lime-300 mb-2">{experience.company}</h3>
@@ -82,6 +81,6 @@ interface Experience {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     )
   }

@@ -1,0 +1,74 @@
+{
+    "nav":{
+        "home": "Home",
+        "experience": "Experiences",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "home":{
+        "location": "Recife, Brazil",
+        "subtitle": "Software Engineer | Passionate about creating modern and efficient applications.",
+        "description": "Hello! I am a software engineer with 6 years of experience in building web applications and also in machine learning. My current stack consists of technologies like Python, Golang, Django, and React. When I'm not coding, I enjoy soccer and exploring new places."
+    },
+    "experiences": {
+        "title": "Experiences",
+        "vert":{
+            "role": "Software Engineer",
+            "period": "Jun 2022 - Present",
+            "description": "I work on developing innovative solutions, focusing on high-performance web applications with modern technologies."
+        },
+        "elife": {
+            "role": "FullStack Developer",
+            "period": "Jul 2021 - May 2022",
+            "description": "I developed and maintained virtual assistants such as chatbots for various companies across different industries."
+        },
+        "live": {
+            "role": "AI Developer",
+            "period": "Apr 2019 - Dec 2020",
+            "description": "I conducted research and implemented artificial intelligence solutions to improve urban mobility in smart cities."
+        }
+    },
+    "skills": {
+        "title": "Programming Languages and Tools",
+        "python": {
+            "description": "Backend development, Data Analysis, Scripting, and Machine Learning with Python.",
+            "experience": "6 years"
+        },
+        "django": {
+            "description": "Designing and implementing efficient Web Applications.",
+            "experience": "3 years"
+        },
+        "golang": {
+            "description": "Development of RESTful APIs and Microservices.",
+            "experience": "3 years"
+        },
+        "react": {
+            "description": "Developing and maintaining efficient and responsive User Interfaces using React.",
+            "experience": "2 years"
+        },
+        "node": {
+            "description": "Developing RESTful APIs and Webhooks with Node.js and Express.",
+            "experience": "3 years"
+        },
+        "typescript": {
+            "description": "Enhancing JavaScript development with static typing and advanced features.",
+            "experience": "3 years"
+        },
+        "postgres": {
+            "description": "Managing and performing queries on relational databases.",
+            "experience": "3 years"
+        },
+        "mongodb": {
+            "description": "Creating and maintaining non-relational databases.",
+            "experience": "2 years"
+        }
+    },
+    "contact":{
+        "title": "Send me a message",
+        "select-name": "Name",
+        "select-email": "E-mail",
+        "select-subject": "Subject",
+        "select-message": "Message",
+        "button-send": "Send"
+    }
+}
