@@ -77,7 +77,7 @@ export function Skills() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         >
-        <h2 className="text-4xl font-bold text-center text-lime-300 mb-12">{t('skills.title')}</h2>
+        <h2 className="text-3xl sm:text-4xl mt-8 sm:mt-12 font-bold text-center text-lime-300 mb-12">{t('skills.title')}</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, index) => (
             <SkillCard key={index} skill={skill} />

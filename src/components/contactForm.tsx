@@ -38,7 +38,7 @@ export function ContactForm() {
 
   return (
     <div className="max-w-lg mx-auto p-4">
-      <h1 className="text-4xl text-center font-bold text-lime-300 mb-12">{t('contact.title')}</h1>
+      <h1 className="text-3xl mt-8 sm:mt-12 sm:text-4xl text-center font-bold text-lime-300 mb-12">{t('contact.title')}</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Nome */}
         <div>

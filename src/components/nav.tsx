@@ -48,10 +48,10 @@ export function Navbar () {
           </div>
           {isOpen && (
             <div className="bg-black md:hidden">
-              <a href="/" className="block text-white hover:bg-lime-300 p-2">{t('nav.home')}</a>
-              <a href="/experiences" className="block text-white hover:bg-lime-300 p-2">{t('nav.experience')}</a>
-              <a href="/skills" className="block text-white hover:bg-lime-300 p-2">{t('nav.skills')}</a>
-              <a href="/contact" className="block text-white hover:bg-lime-300 p-2">{t('nav.contact')}</a>
+              <Link to="/" className="block text-white hover:bg-lime-300 p-2">{t('nav.home')}</Link>
+              <Link to="/experiences" className="block text-white hover:bg-lime-300 p-2">{t('nav.experience')}</Link>
+              <Link to="/skills" className="block text-white hover:bg-lime-300 p-2">{t('nav.skills')}</Link>
+              <Link to="/contact" className="block text-white hover:bg-lime-300 p-2">{t('nav.contact')}</Link>
               <select
                 value={i18n.language}
                 onChange={changeLanguage}

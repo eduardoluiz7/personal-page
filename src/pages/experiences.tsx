@@ -43,7 +43,7 @@ interface Experience {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
         >
-        <h1 className="text-4xl font-bold text-center text-lime-300 mb-12">{t('experiences.title')}</h1>
+        <h1 className="text-3xl sm:text-4xl mt-8 sm:mt-12 font-bold text-center text-lime-300 mb-12">{t('experiences.title')}</h1>
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0 }}
