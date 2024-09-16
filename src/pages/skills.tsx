@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa'
 import { SiTypescript, SiDjango, SiPostgresql, SiGo, SiMongodb } from 'react-icons/si'
+import { motion } from 'framer-motion';
 
 interface Skill {
   name: string
@@ -61,22 +62,38 @@ const skills: Skill[] = [
 
 export function Skills() {
   return (
-    <div className="min-h-screen bg-pattern bg-no-repeat bg-center flex flex-col items-center justify-center p-4 sm:p-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div 
+      className="min-h-screen bg-pattern bg-no-repeat bg-center flex flex-col items-center justify-center p-4 sm:p-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+      >
+      <motion.div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        >
         <h2 className="text-4xl font-bold text-center text-lime-300 mb-12">Linguagens e Ferramentas</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, index) => (
             <SkillCard key={index} skill={skill} />
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
 function SkillCard({ skill }: { skill: Skill }) {
     return (
-      <div className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300">
+      <motion.div
+        className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        >
         <div className="p-6 flex items-center">
           <div className="flex-shrink-0 mr-4">
             <div className="w-12 h-12 flex items-center justify-center text-3xl">
@@ -89,6 +106,6 @@ function SkillCard({ skill }: { skill: Skill }) {
             <p className="text-gray-300 text-sm">{skill.description}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     )
   }

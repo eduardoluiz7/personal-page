@@ -3,11 +3,18 @@ import resume from '../assets/cv_eduardo_pt.pdf'
 import { FaFileDownload } from 'react-icons/fa'
 import { MapPin } from 'lucide-react'
 import { Socials } from '../components/socials'
+import { motion } from 'framer-motion';
 
 
 export function Home() {
     return (
-        <div className="min-h-screen bg-pattern bg-no-repeat bg-center from-gray-100 to-white flex flex-col items-center justify-center p-4 sm:p-8">
+        <motion.div 
+          className="min-h-screen bg-pattern bg-no-repeat bg-center from-gray-100 to-white flex flex-col items-center justify-center p-4 sm:p-8"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={{ duration: 0.5 }}
+          >
           <div className="max-w-4xl w-full space-y-6 sm:space-y-8 text-center">
             <div className="relative w-32 h-32 sm:w-48 sm:h-48 mx-auto rounded-full overflow-hidden shadow-lg">
               <img
@@ -42,6 +49,6 @@ export function Home() {
             </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       )
 }
