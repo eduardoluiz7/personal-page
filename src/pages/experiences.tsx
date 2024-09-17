@@ -30,7 +30,7 @@ interface Experience {
         company: "LIVE - Laboratório de Inovação",
         role: t('experiences.live.role'),
         period: t('experiences.live.period'),
-        technologies: ["Python", "Node", "Otimização"],
+        technologies: ["Python", "Node"],
         description: t('experiences.live.description')
       }
     ]
