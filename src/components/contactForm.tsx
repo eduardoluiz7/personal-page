@@ -96,7 +96,6 @@ export function ContactForm() {
         </div>
         <button
           type="submit"
-          disabled
           className="w-full bg-lime-300 text-zinc-900 font-bold py-2 px-4 rounded-lg hover:bg-lime-400"
         >
           {t('contact.button-send')}

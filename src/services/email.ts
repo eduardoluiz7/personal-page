@@ -13,7 +13,7 @@ export function sendEmail(formData: ContactData){
         message: formData.message,
       };
 
-    emailjs.send('', '', data, '')
+    emailjs.send(import.meta.env.VITE_MAIL_SERVICE_ID, import.meta.env.VITE_MAIL_TEMPLATE_ID, data,import.meta.env.VITE_MAIL_PUBLIC_KEY)
       .then((response) => {
         console.log('Success:', response);
       })
