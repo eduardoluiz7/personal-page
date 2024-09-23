@@ -21,7 +21,7 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+
     const data: ContactData = {
         message: formData.message,
         user_name: formData.name,
