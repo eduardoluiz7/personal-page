@@ -50,7 +50,7 @@ export function ContactForm() {
             onChange={handleChange}
             required
             placeholder={t('contact.select-name')}
-            className="w-full h-12 px-3 py-2 border-none bg-zinc-900 rounded-lg text-gray-200 focus:outline-none"
+            className="w-full h-12 px-3 py-2 bg-zinc-900 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-300 transition duration-200"
           />
         </div>
         {/* Email */}
@@ -63,7 +63,7 @@ export function ContactForm() {
             onChange={handleChange}
             required
             placeholder={t('contact.select-email')}
-            className="w-full h-12 px-3 bg-zinc-900 border-none py-2 border rounded-lg text-gray-200 focus:outline-none"
+            className="w-full h-12 px-3 bg-zinc-900 py-2 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-300 transition duration-200"
           />
         </div>
 
@@ -77,7 +77,7 @@ export function ContactForm() {
             onChange={handleChange}
             required
             placeholder={t('contact.select-subject')}
-            className="w-full h-12 px-3 bg-zinc-900 py-2 border border-none rounded-lg text-gray-200 focus:outline-none"
+            className="w-full h-12 px-3 bg-zinc-900 py-2 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-300 transition duration-200"
           />
         </div>
 
@@ -91,7 +91,7 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder={t('contact.select-message')}
             required
-            className="w-full bg-zinc-900 px-3 border-none py-2 border placholder-zinc-400 rounded-lg text-gray-200 focus:outline-none resize-none"
+            className="w-full bg-zinc-900 px-3 py-2 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-300 transition duration-200 resize-none"
           />
         </div>
         <button
