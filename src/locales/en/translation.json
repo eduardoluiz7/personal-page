@@ -3,7 +3,8 @@
         "home": "Home",
         "experience": "Experiences",
         "skills": "Skills",
-        "contact": "Contact"
+        "contact": "Contact",
+        "projects": "Projects"
     },
     "home":{
         "location": "Recife, Brazil",
@@ -61,6 +62,18 @@
         "mongodb": {
             "description": "Creating and maintaining non-relational databases.",
             "experience": "2 years"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Here are some of the projects I developed in my free time.",
+        "letmeask": {
+            "title": "Letmeask",
+            "description": "Live Q&A platform with Firebase integration."
+        },
+        "voucasar": {
+            "title": "VouCasar",
+            "description": "Custom wedding pages generator."
         }
     },
     "contact":{

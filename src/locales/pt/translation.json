@@ -3,7 +3,8 @@
         "home": "Início",
         "experience": "Experiências",
         "skills": "Habilidades",
-        "contact": "Contato"
+        "contact": "Contato",
+        "projects": "Projetos"
     },
     "home": {
         "location": "Recife, Brasil",
@@ -61,6 +62,18 @@
         "mongodb": {
             "description": "Criação e manutenção de bancos de dados não relacionais.",
             "experience": "2 anos"
+        }
+    },
+    "projects": {
+        "title": "Projetos",
+        "description": "Aqui estão alguns dos projetos que desenvolvi no meu tempo livre.",
+        "letmeask": {
+            "title": "Letmeask",
+            "description": "Plataforma de perguntas e respostas ao vivo."
+        },
+        "voucasar": {
+            "title": "VouCasar",
+            "description": "Plataforma para gerar sites de casamento."
         }
     },
     "contact": {

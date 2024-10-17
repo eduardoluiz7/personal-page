@@ -63,14 +63,14 @@ interface Experience {
   function ExperienceCard({ experience }: { experience: Experience }) {
     return (
       <div
-        className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300"
+        className="bg-zinc-900 shadow-lg rounded-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-md duration-300 flex flex-col h-full"
         >
-        <div className="p-6">
+        <div className="p-6 flex flex-col h-full">
           <h3 className="text-xl font-semibold text-lime-300 mb-2">{experience.company}</h3>
           <p className="text-gray-200 mb-1">{experience.role}</p>
           <p className="text-sm text-gray-400 mb-4">{experience.period}</p>
-          <p className="text-gray-300 mb-4">{experience.description}</p>
-          <div className="flex flex-wrap gap-2">
+          <p className="text-gray-300 mb-4 flex-grow">{experience.description}</p>
+          <div className="flex flex-wrap gap-2 mt-auto">
             {experience.technologies.map((tech, index) => (
               <span
                 key={index}
