@@ -1,4 +1,4 @@
-import profileImg  from '../assets/profile.jpg'
+import profileImg  from '../assets/profile.png'
 import resume from '../assets/eduardo_luiz_cv.pdf'
 import { FaFileDownload } from 'react-icons/fa'
 import { MapPin } from 'lucide-react'
@@ -22,7 +22,7 @@ export function Home() {
               <img
                 src={profileImg}
                 alt="Profile picture"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-300">Eduardo Luiz</h1>
