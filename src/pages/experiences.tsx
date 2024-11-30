@@ -23,7 +23,7 @@ interface Experience {
         company: "Elife",
         role: t('experiences.elife.role'),
         period: t('experiences.elife.period'),
-        technologies: ["Node.js", "Express", "MongoDB", "React.js"],
+        technologies: ["Node.js", "MongoDB", "Dialogflow", "React.js"],
         description: t('experiences.elife.description')
       },
       {
