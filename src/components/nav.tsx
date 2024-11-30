@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -7,6 +7,7 @@ export function Navbar () {
     const [isOpen, setIsOpen] = useState(false);
     const { i18n } = useTranslation();
     const { t } = useTranslation();
+    const menuRef = useRef<HTMLDivElement | null>(null); 
 
     const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
       i18n.changeLanguage(event.target.value);
@@ -15,6 +16,23 @@ export function Navbar () {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
       };
+
+      useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+          if (
+            isOpen && 
+            menuRef.current && 
+            !menuRef.current.contains(event.target as Node)
+          ) {
+            setIsOpen(false);
+          }
+        };
+    
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [isOpen]);
 
       return (
         <nav className="p-4 fixed w-full z-50">
@@ -48,7 +66,7 @@ export function Navbar () {
             </div>
           </div>
           {isOpen && (
-            <div className="bg-black md:hidden">
+            <div ref={menuRef} className="bg-black md:hidden">
               <Link to="/" className="block text-white hover:bg-lime-300 p-2">{t('nav.home')}</Link>
               <Link to="/experiences" className="block text-white hover:bg-lime-300 p-2">{t('nav.experience')}</Link>
               <Link to="/skills" className="block text-white hover:bg-lime-300 p-2">{t('nav.skills')}</Link>
