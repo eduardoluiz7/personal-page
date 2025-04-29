@@ -1,6 +1,4 @@
 import profileImg  from '../assets/profile.png'
-import resume from '../assets/eduardo_luiz_cv.pdf'
-import { FaFileDownload } from 'react-icons/fa'
 import { MapPin } from 'lucide-react'
 import { Socials } from '../components/socials'
 import { motion } from 'framer-motion';
