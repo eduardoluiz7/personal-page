@@ -42,8 +42,12 @@ export function Navbar () {
             </div>
             <div className="hidden md:flex space-x-4">
               <Link to="/" className="text-lime-300 hover:text-gray-300">{t('nav.home')}</Link>
-              <Link to="/experiences" className="text-lime-300 hover:text-gray-300">{t('nav.experience')}</Link>
+             {
+              /* 
+               <Link to="/experiences" className="text-lime-300 hover:text-gray-300">{t('nav.experience')}</Link>
               <Link to="/skills" className="text-lime-300 hover:text-gray-300">{t('nav.skills')}</Link>
+              */
+             }
               
               <Link to="/contact" className="text-lime-300 hover:text-gray-300">{t('nav.contact')}</Link>
               <span className="text-lime-300 m-0 p-0 border-none">|</span>

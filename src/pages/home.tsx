@@ -39,7 +39,9 @@ export function Home() {
               </p>
             </div>
             <Socials />
-            <div className="mt-6">
+           {
+            /* 
+             <div className="mt-6">
             <a
                 href={resume}
                 download="Eduardo_Luiz_CV.pdf"
@@ -49,6 +51,8 @@ export function Home() {
                 Download CV
             </a>
             </div>
+            */
+           }
           </div>
         </motion.div>
       )
